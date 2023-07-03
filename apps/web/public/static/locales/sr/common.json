@@ -1324,6 +1324,7 @@
   "form_description": "Kreirajte formular da biste rutirali osobu koja vrši rezervaciju",
   "copy_link_to_form": "Kopiraj vezu u formular",
   "theme": "Tema",
+  "app_theme": "Тема апликације",
   "theme_applies_note": "Ovo se odnosi samo na vaše javne stranice za zakazivanje",
   "theme_system": "Sistemski podrazumevano",
   "add_a_team": "Dodaj tim",

@@ -27,6 +27,7 @@ import { getPlaceholderAvatar } from "@calcom/lib/defaultAvatarImage";
 import getBrandColours from "@calcom/lib/getBrandColours";
 import { useIsomorphicLayoutEffect } from "@calcom/lib/hooks/useIsomorphicLayoutEffect";
 import { useLocale } from "@calcom/lib/hooks/useLocale";
+import useTheme from "@calcom/lib/hooks/useTheme";
 import { isKeyInObject } from "@calcom/lib/isKeyInObject";
 import type { User } from "@calcom/prisma/client";
 import { trpc } from "@calcom/trpc/react";
@@ -279,10 +280,11 @@ const PublicShell = (props: LayoutProps) => {
 
 export default function Shell(props: LayoutProps) {
   // if a page is unauthed and isPublic is true, the redirect does not happen.
+  const { data: user } = useMeQuery();
   useRedirectToLoginIfUnauthenticated(props.isPublic);
   useRedirectToOnboardingIfNeeded();
   // System Theme is automatically supported using ThemeProvider. If we intend to use user theme throughout the app we need to uncomment this.
-  // useTheme(profile.theme);
+  useTheme(user?.appTheme);
   useBrandColors();
 
   return !props.isPublic ? (

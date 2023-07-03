@@ -4,6 +4,7 @@ interface ThemeLabelProps {
   label: string;
   defaultChecked?: boolean;
   register: any;
+  page: string;
 }
 
 export default function ThemeLabel(props: ThemeLabelProps) {
@@ -11,14 +12,13 @@ export default function ThemeLabel(props: ThemeLabelProps) {
 
   return (
     <label
-      className="relative mb-4 flex-1 cursor-pointer text-center last:mb-0 last:mr-0 sm:mb-0 sm:mr-4"
-      htmlFor={`theme-${variant}`}
-      data-testid={`theme-${variant}`}>
+      className="relative mb-4 flex-1 cursor-pointer text-center last:mb-0 last:mr-0 sm:mr-4 sm:mb-0"
+      htmlFor={`theme-${props.page}-${variant}`}>
       <input
         className="peer absolute left-8 top-8"
         type="radio"
         value={value}
-        id={`theme-${variant}`}
+        id={`theme-${props.page}-${variant}`}
         defaultChecked={defaultChecked}
         {...register("theme")}
       />

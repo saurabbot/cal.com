@@ -112,6 +112,7 @@ const ProfileView = () => {
           <div className="flex flex-col justify-between sm:flex-row">
             <ThemeLabel
               variant="system"
+              page="booking"
               value={null}
               label={t("theme_system")}
               defaultChecked={team.theme === null}
@@ -119,6 +120,7 @@ const ProfileView = () => {
             />
             <ThemeLabel
               variant="light"
+              page="booking"
               value="light"
               label={t("light")}
               defaultChecked={team.theme === "light"}
@@ -127,7 +129,8 @@ const ProfileView = () => {
             <ThemeLabel
               variant="dark"
               value="dark"
-              label={t("dark")}
+              page="booking"
+              label={t("theme_dark")}
               defaultChecked={team.theme === "dark"}
               register={form.register}
             />
